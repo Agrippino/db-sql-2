@@ -25,17 +25,28 @@ GROUP BY (department_id);
 
 
 /-------------------Esercizio con JOIN-----------------\
-Esercizio 5:
+Esercizio 1:
 SELECT * 
 FROM students
 INNER JOIN degrees ON degrees.id = students.degree_id
 WHERE degrees.name = 'Corso di Laurea in Economia';
 
-Esercizio 6:
+Esercizio 2:
 SELECT * 
 FROM degrees
 INNER JOIN departments ON department_id = degrees.department_id
 WHERE departments.name = 'Dipartimento di Neuroscienze';
 
-Esercizio 7:
+Esercizio 3:
+SELECT * 
+FROM degrees
+INNER JOIN course_teacher ON teacher_id = degrees.id
+WHERE id=44;
+
+Esercizio 4:
+SELECT students.surname AS cognome, students.name AS nome, degrees.name AS corso_di_laurea, departments.name AS nome_dipartimento
+FROM students
+JOIN degrees ON degrees.id = students.degree_id
+JOIN departments ON departments.id = degrees.department_id
+ORDER BY surname,students.name;
 
