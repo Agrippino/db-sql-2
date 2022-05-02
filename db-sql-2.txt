@@ -50,3 +50,20 @@ JOIN degrees ON degrees.id = students.degree_id
 JOIN departments ON departments.id = degrees.department_id
 ORDER BY surname,students.name;
 
+Esericizio 5:
+SELECT degrees.name AS corso_di_laurea, courses.degree_id AS corso, teachers.id AS id_insegnante,teachers.name AS nome_insegnante, teachers.surname AS cognome_insegnante
+FROM degrees
+JOIN courses ON courses.degree_id = degrees.id
+JOIN course_teacher ON course_teacher.course_id = courses.id
+JOIN teachers ON teacher_id = course_teacher.teacher_id;
+
+Esercizio 6:
+SELECT DISTINCT  teachers.name, teachers.surname, departments.name
+FROM teachers
+JOIN course_teacher ON course_teacher.teacher_id = teachers.id
+JOIN courses ON courses.id = course_teacher.course_id
+JOIN degrees ON degrees.id = courses.degree_id
+JOIN departments ON departments.id = degrees.department_id
+WHERE departments.name='Dipartimento di Matematica';
+
+
