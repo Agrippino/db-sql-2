@@ -1,6 +1,27 @@
-Esercizio con GROUP BY:
+/-------------------Esercizio con GROUP BY-----------------\
 
 Esercizio 1: 
 SELECT COUNT (id) 
 FROM students
 GROUP BY year(enrolment_date);
+
+Esercizio 2:
+SELECT COUNT (id), office_address
+FROM teachers
+GROUP BY (office_address);
+
+Esercizio 3:
+SELECT exam_id AS ID_esame,
+AVG (vote) AS Media_voto
+FROM exam_student
+GROUP BY (exam_id)
+ORDER BY exam_id ASC;
+
+Esercizio 4:
+SELECT Count (name)
+FROM degrees
+GROUP BY (department_id);
+
+
+
+/-------------------Esercizio con JOIN-----------------\
