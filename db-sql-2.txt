@@ -1,0 +1,6 @@
+Esercizio con GROUP BY:
+
+Esercizio 1: 
+SELECT COUNT (id) 
+FROM students
+GROUP BY year(enrolment_date);
